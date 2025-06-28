@@ -1,0 +1,17 @@
+# Composer
+/vendor/
+composer.phar
+
+# Database
+*.sqlite
+*.db
+
+# Environment files
+.env
+.env.local
+
+# Cache
+*.cache
+
+# Logs
+*.log

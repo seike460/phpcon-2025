@@ -1,0 +1,23 @@
+# Composer
+/vendor/
+composer.phar
+
+# Symfony
+/var/cache/
+/var/log/
+/var/sessions/
+
+# Database
+*.sqlite
+*.db
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Cache
+*.cache
+
+# Logs
+*.log

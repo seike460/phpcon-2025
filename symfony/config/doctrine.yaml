@@ -1,0 +1,16 @@
+doctrine:
+    dbal:
+        driver: 'pdo_sqlite'
+        path: '%kernel.project_dir%/var/symfony_demo.sqlite'
+        charset: utf8
+
+    orm:
+        auto_generate_proxy_classes: true
+        auto_mapping: true
+        mappings:
+            App:
+                is_bundle: false
+                type: attribute
+                dir: '%kernel.project_dir%/src/Entity'
+                prefix: 'Symfony\Entity'
+                alias: App
