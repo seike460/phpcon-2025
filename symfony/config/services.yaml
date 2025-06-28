@@ -1,0 +1,24 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    # Domain layer services
+    App\Domain\Repository\UserRepositoryInterface:
+        alias: Symfony\Infrastructure\Repository\SymfonyUserRepository
+        
+    # Application layer services
+    App\Application\UseCase\User\CreateUserUseCase:
+        arguments:
+            $userRepository: '@App\Domain\Repository\UserRepositoryInterface'
+    
+    # Infrastructure layer services  
+    Symfony\Infrastructure\Repository\SymfonyUserRepository:
+        arguments:
+            $entityManager: '@doctrine.orm.entity_manager'
+    
+    # Controllers
+    Symfony\Controller\UserController:
+        arguments:
+            $createUserUseCase: '@App\Application\UseCase\User\CreateUserUseCase'
+        tags: ['controller.service_arguments']
